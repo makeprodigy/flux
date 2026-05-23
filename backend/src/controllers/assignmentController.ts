@@ -133,7 +133,7 @@ export async function getAssignments(req: Request, res: Response): Promise<void>
     }
 
     const page = parseInt(req.query.page as string) || 1;
-    const limit = parseInt(req.query.limit as string) || 10;
+    const limit = parseInt(req.query.limit as string) || 100;
     const skip = (page - 1) * limit;
 
     const assignments = await Assignment.find({
