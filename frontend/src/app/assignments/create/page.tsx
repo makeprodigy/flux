@@ -210,7 +210,7 @@ export default function CreateAssignmentPage() {
           <div className={`flex-1 h-1.5 rounded-full transition-colors duration-300 ${step === 2 ? 'bg-[#352B25]' : 'bg-[#E5E5E5]'}`} />
         </div>
 
-        <div className="bg-white/60 backdrop-blur-[24px] border border-white/80 rounded-[24px] sm:rounded-[32px] p-4 sm:p-8 shadow-sm">
+        <div className="bg-[#FAFAFA]/85 backdrop-blur-[12px] border border-white/50 shadow-[16px_0_80px_rgba(0,0,0,0.25),4px_0_24px_rgba(0,0,0,0.15)] rounded-[24px] sm:rounded-[32px] p-4 sm:p-8">
 
         {/* ─── STEP 1 ─── */}
         {step === 1 && (
