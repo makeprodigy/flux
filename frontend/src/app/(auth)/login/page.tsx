@@ -93,18 +93,26 @@ export default function LoginPage() {
           </div>
 
           {/* Demo credentials banner */}
-          <div style={{ background: 'linear-gradient(135deg, #fff8f6, #fff3ef)', border: '1px solid #ffd4c8', borderRadius: '10px', padding: '12px 14px', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
-            <div style={{ flex: 1 }}>
-              <p style={{ margin: 0, fontSize: '11px', fontWeight: 600, color: '#FF5623', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>🎯 Demo Account</p>
-              <p style={{ margin: 0, fontSize: '12px', color: '#555', fontFamily: 'monospace' }}>{DEMO_EMAIL}</p>
-              <p style={{ margin: 0, fontSize: '12px', color: '#555', fontFamily: 'monospace' }}>{DEMO_PASSWORD}</p>
+          <div className="flex items-center justify-between gap-4 p-4 mb-6 rounded-2xl bg-gradient-to-br from-[#FFF4F1] to-[#FFF9F8] border border-[#FFE0D6] shadow-[0_2px_12px_rgba(216,67,21,0.06)] relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF5623] opacity-[0.03] blur-2xl rounded-full group-hover:opacity-[0.06] transition-opacity duration-500 pointer-events-none" />
+            
+            <div className="relative z-10 flex-1">
+              <div className="flex items-center gap-1.5 mb-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#FF5623] shadow-[0_0_8px_rgba(255,86,35,0.6)]" />
+                <p className="m-0 text-[10px] font-bold text-[#FF5623] uppercase tracking-widest font-heading">Demo Account</p>
+              </div>
+              <div className="flex flex-col gap-0.5">
+                <p className="m-0 text-[13px] text-[#4B5563] font-medium font-inter">{DEMO_EMAIL}</p>
+                <p className="m-0 text-[13px] text-[#9CA3AF] font-medium font-inter tracking-wider">•••••••••</p>
+              </div>
             </div>
+            
             <button
               type="button"
               onClick={fillDemo}
-              style={{ background: '#FF5623', color: 'white', border: 'none', borderRadius: '7px', padding: '8px 14px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0 }}
+              className="relative z-10 flex items-center gap-2 bg-[#FF5623] text-white border-none rounded-xl px-4 py-2.5 text-[12px] font-bold font-heading shadow-[0_4px_12px_rgba(255,86,35,0.2)] hover:bg-[#E64A19] hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(255,86,35,0.3)] transition-all duration-300 cursor-pointer whitespace-nowrap"
             >
-              Fill In →
+              Fill Details
             </button>
           </div>
 

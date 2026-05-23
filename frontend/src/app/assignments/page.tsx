@@ -228,7 +228,7 @@ export default function AssignmentsPage() {
             </button>
 
             {isFilterOpen && (
-              <div className="absolute top-full left-0 mt-3 w-72 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_12px_32px_rgba(0,0,0,0.1),0_1px_3px_rgba(0,0,0,0.05)] border border-black/5 p-4 z-[100] flex flex-col gap-3">
+              <div className="absolute top-full left-0 mt-3 w-72 bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-[#E5E5E5] p-4 z-[100] flex flex-col gap-3">
                 
                 {/* Sort Order */}
                 <div>
