@@ -81,9 +81,7 @@ export function startWorker(): Worker<GenerationJob> {
       connection: redisClient,
       concurrency: 3,
       // Optimize polling to drastically reduce Redis command usage (important for Upstash)
-      settings: {
-        stalledInterval: 10800000, // 180 minutes (default 30s)
-      },
+      stalledInterval: 10800000, // 180 minutes (default 30s)
       drainDelay: 20000, // 20 seconds (default 5s)
     }
   );
