@@ -69,7 +69,7 @@ export default function Sidebar() {
       <div className="px-8 mt-10 mb-16">
         <Link
           href="/assignments/create"
-          className="block p-[3px] rounded-full bg-gradient-to-r from-[#FF7A45] via-[#E65023] to-[#C93B12] hover:scale-[1.02] transition-transform duration-200 no-underline shadow-sm"
+          className="block p-[4px] rounded-full bg-gradient-to-r from-[#FF7A45] via-[#E65023] to-[#C93B12] hover:scale-[1.02] transition-transform duration-200 no-underline shadow-sm"
         >
           <div className="flex items-center justify-center gap-2 bg-[#1F1F1F] text-white rounded-full py-2.5 px-4 font-inter text-[13px] font-medium w-full h-full">
             <Sparkles size={16} className="text-white fill-white" />
