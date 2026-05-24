@@ -20,11 +20,14 @@
       <img src="https://img.shields.io/badge/Live_Demo-Vercel-black?logo=vercel" alt="Live Demo" />
     </a>
   </p>
-
-  <p align="center">
-    <img src="./frontend/public/screenshot.png" alt="VedaAI UI Screenshot" width="800" />
-  </p>
 </div>
+
+## UI Screenshots
+<p align="center">
+  <img src="./frontend/public/dashboard.png" alt="Desktop View" width="70%" />
+  &nbsp; &nbsp; &nbsp;
+  <img src="./frontend/public/mobile_view.png" alt="Mobile View" width="25%" />
+</p>
 
 ---
 
