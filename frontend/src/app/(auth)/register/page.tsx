@@ -67,7 +67,7 @@ export default function RegisterPage() {
         
         <div className="auth-left-content">
           <div className="auth-left-logo-row" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '40px' }}>
-            <Logo className="w-[48px] h-[48px] rounded-[14px] shadow-lg" />
+            <Logo className="w-[48px] h-[48px] shadow-lg" />
             <span className="auth-left-logo-text" style={{ margin: 0 }}>VedaAI</span>
           </div>
           

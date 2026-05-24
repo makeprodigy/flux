@@ -32,7 +32,7 @@ export default function TopBar({ title, backHref, breadcrumb }: TopBarProps) {
       <div className="flex items-center gap-3">
         {/* Mobile Logo */}
         <div className="flex md:hidden items-center gap-3 cursor-pointer" onClick={() => router.push('/dashboard')}>
-          <Logo className="w-[34px] h-[34px] rounded-[10px] shadow-sm" dark />
+          <Logo className="w-[34px] h-[34px] shadow-sm" dark />
           <span className="font-bricolage font-extrabold text-[18px] text-[#352B25] tracking-tight">
             VedaAI
           </span>

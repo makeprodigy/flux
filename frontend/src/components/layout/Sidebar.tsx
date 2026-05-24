@@ -58,7 +58,7 @@ export default function Sidebar() {
     <aside className="app-sidebar bg-[#FAFAFA]/85 backdrop-blur-[12px] border border-white/50 shadow-[16px_0_80px_rgba(0,0,0,0.25),4px_0_24px_rgba(0,0,0,0.15)] rounded-[14px]">
       {/* Logo */}
       <div className="flex items-center gap-3 px-6 pt-8 pb-4">
-        <Logo className="w-10 h-10 rounded-xl shadow-md" />
+        <Logo className="w-10 h-10 shadow-md" />
         <span className="font-bricolage font-extrabold text-[26px] text-[#352B25] tracking-tight">
           VedaAI
         </span>
