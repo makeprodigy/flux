@@ -104,44 +104,44 @@ The backend is modularized to ensure separation of concerns.
 
 ```mermaid
 classDiagram
-    class ClientRouter {
+    class AssignmentRouter {
         +POST /api/assignments
         +GET /api/assignments
-        +GET /api/results/job/:id
+        +GET /api/assignments/:id
     }
     
     class AuthMiddleware {
-        +verifyJWT()
+        +verifyToken()
     }
     
     class AssignmentController {
-        +createAssignment(req, res)
-        +getAssignments(req, res)
+        +createAssignment()
+        +getAssignments()
     }
     
-    class QueueService {
-        +addGenerateJob(data)
+    class GenerationQueue {
+        +addGenerationJob()
     }
     
-    class GenerateWorker {
-        +process(job)
+    class GenerationWorker {
+        +processJob()
     }
     
-    class AIService {
-        +generatePaper(prompt, context)
+    class LLMService {
+        +generateQuestionPaper()
     }
     
-    class WebSocketManager {
-        +initialize(server)
-        +broadcastProgress(jobId, status)
+    class WebSocketService {
+        +initialize()
+        +broadcastToRoom()
     }
 
-    ClientRouter --> AuthMiddleware : Uses
-    ClientRouter --> AssignmentController : Routes to
-    AssignmentController --> QueueService : Enqueues
-    QueueService ..> GenerateWorker : Triggers (via Redis)
-    GenerateWorker --> AIService : Calls
-    GenerateWorker --> WebSocketManager : Emits Progress
+    AssignmentRouter --> AuthMiddleware : Protected by
+    AssignmentRouter --> AssignmentController : Routes to
+    AssignmentController --> GenerationQueue : Enqueues job
+    GenerationQueue ..> GenerationWorker : Redis Trigger
+    GenerationWorker --> LLMService : Calls Gemini
+    GenerationWorker --> WebSocketService : Emits Progress
 ```
 
 ### Key Modules
@@ -165,7 +165,10 @@ erDiagram
         String password "Hashed"
         String role "teacher/student"
         String schoolName
+        String schoolLocation
+        String avatarUrl
         Date createdAt
+        Date updatedAt
     }
 
     ASSIGNMENT {
@@ -174,12 +177,18 @@ erDiagram
         String subject
         String topic
         String className
+        String schoolName
+        String timeAllowed
         Date dueDate
-        Array questionTypes "e.g. {type, count, marks}"
+        Array questionTypes "{type, count, marks}"
+        String additionalInfo
+        String fileContent
+        Array images "{data, mimeType}"
         String status "pending/processing/completed"
         String jobId "BullMQ Job ID"
         ObjectId resultId FK "Nullable until complete"
         Date createdAt
+        Date updatedAt
     }
 
     RESULT {
@@ -189,6 +198,7 @@ erDiagram
         ObjectId userId FK
         Object paper "Structured JSON from AI"
         Date createdAt
+        Date updatedAt
     }
 
     USER ||--o{ ASSIGNMENT : "creates"
