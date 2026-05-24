@@ -3,13 +3,13 @@
   <p align="center">
     <strong>An AI-powered assessment creation platform for teachers</strong>
     <br/>
-    A full-stack application that allows teachers to create custom assignments, generate structured question papers using AI, and view the output in real-time.
+    VedaAI allows teachers to create custom assignments in seconds by describing a topic. The AI generates structured question papers with sections and an answer key. The platform handles the full lifecycle: assignment generation, real-time status streaming, paper preview, and PDF exporting. Built on Next.js, Express, MongoDB, BullMQ, and Google Gemini — with real-time progress streaming via WebSockets.
   </p>
 
   <p align="center">
     <img src="https://img.shields.io/badge/Next.js-15-black?logo=next.js" alt="Next.js" />
     <img src="https://img.shields.io/badge/TypeScript-5-blue?logo=typescript" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Tailwind_CSS-3-cyan?logo=tailwind-css" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-4-cyan?logo=tailwind-css" alt="Tailwind CSS" />
     <img src="https://img.shields.io/badge/Express.js-Node.js-green?logo=node.js" alt="Express" />
     <br/>
     <img src="https://img.shields.io/badge/MongoDB%20Atlas-Database-47A248?logo=mongodb&logoColor=white" alt="MongoDB Atlas" />
@@ -22,142 +22,168 @@
   </p>
 
   <p align="center">
-    <a href="https://assignment-veda.vercel.app/">Live Demo</a>
-    ·
-    <a href="#architecture">Architecture</a>
-    ·
-    <a href="#quick-start">Quick Start</a>
+    <img src="./frontend/public/screenshot.png" alt="VedaAI UI Screenshot" width="800" />
   </p>
 </div>
 
 ---
 
-## 🎯 Overview
-
-Built as a Full Stack Engineering Assignment, **VedaAI** is a complete, production-ready AI Assessment Creator. 
-
-### Key Capabilities:
-- **Instant Assignment Generation:** Empowers teachers to generate high-quality question papers in seconds using AI.
-- **Premium UX:** Faithfully implements and elevates the provided Figma designs with micro-animations, glassmorphism, and custom UI elements.
-- **Robust Infrastructure:** Decoupled backend architecture utilizing background workers and WebSockets for a seamless, unblocking experience.
-
----
-
-## 💻 Frontend System (Assignment Creation)
-
-The frontend is highly responsive and designed to provide a frictionless, modern user experience.
-
-### Core Implementation:
-- **State Management:** Utilizes `Zustand` for lightweight, scalable global state handling across complex form inputs (Question counts, types, time allowance, etc.).
-- **Custom UI Components:** Replaced native OS dropdowns with sleek, custom-built Select components and intuitive drag-and-drop file upload zones.
-- **Strict Validation:** Ensures data integrity by blocking empty fields and negative marks/counts before submission.
-- **Real-Time Progress (WebSockets):** The moment an assignment is queued, the UI connects to a WebSocket server, displaying live toast notifications reflecting the AI's exact progress (e.g., "Connecting to AI... 35%").
-
----
-
-## ⚙️ Backend System
-
-A robust Node.js + Express (TypeScript) architecture engineered for reliability, speed, and asynchronous processing.
-
-### Architecture Flow:
-- **Job Queuing (BullMQ):** Heavy LLM requests are offloaded to a BullMQ worker to prevent API blocking. A pending record is immediately saved in **MongoDB Atlas**.
-- **Caching Layer (Upstash Redis):** Generated question papers are aggressively cached for 1 hour. Reloading the result page serves the paper instantly from memory.
-- **Live Notifications:** As the BullMQ worker processes the generation, it emits live progress updates to a custom WebSocket (`ws`) server, which instantly broadcasts them to the connected frontend client.
-- **Cloud Deployment:** Hosted securely and efficiently on **Render**.
-
----
-
-## 🧠 AI Question Generation
-
-The core generation engine is powered by **Google Gemini 2.5 Flash**, with strict deterministic guardrails.
-
-### AI Implementation Details:
-- **Prompt Engineering:** Prompts are meticulously structured to prevent raw LLM spillage.
-- **JSON Schema Enforcement:** Gemini is strictly instructed to return a structured JSON response matching our internal `QuestionPaper` interface.
-- **Automated Categorization:** The background worker parses the JSON to automatically group questions into logical Sections (A, B, etc.) and tags them with proper Difficulties (Easy/Moderate/Hard).
-- **Error Resilience:** Invalid JSON structures or API failures are safely caught, instantly notifying the frontend to display an error state without crashing the app.
-
----
-
-## 📄 Output Page (Enhanced)
-
-The output view replicates a professional, real-world exam paper with a high degree of UI polish.
-
-### Key Features:
-- **Structured Exam Layout:** Includes a Top Header (School Name, Time Allowed), a Student Info section (Name, Roll No., Section), and aligned Question Sections with specific instructions.
-- **Visual Difficulty Badges:** Questions dynamically render color-coded difficulty tags (Green for Easy, Yellow for Moderate, Red for Hard).
-- **Desktop-Caliber PDF Export:** Uses `html2pdf.js` with a hardcoded internal viewport width (1024px). This guarantees the downloaded A4 PDF maintains perfect desktop formatting and margins, even if downloaded from a mobile device.
-- **Seamless Regeneration Flow:** Includes an intuitive "Regenerate" button that fires a new background job and effortlessly transitions the user through the live WebSocket loading flow to the new paper.
-
----
-
-## 📁 Folder Structure
-
-```text
-VedaAI/
-├── backend/
-│   ├── src/
-│   │   ├── controllers/      # API logic (Assignments, Auth, Results)
-│   │   ├── models/           # Mongoose Schemas (User, Assignment, Result)
-│   │   ├── queues/           # BullMQ queues and workers for AI background jobs
-│   │   ├── routes/           # Express router endpoints
-│   │   ├── services/         # Gemini AI Service, Redis caching, PDF generator
-│   │   ├── types/            # TypeScript interfaces and definitions
-│   │   └── index.ts          # Express & WebSocket server entry point
-│   ├── .env.example
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── app/              # Next.js App Router (Dashboard, Create, Output)
-│   │   ├── components/       # Reusable UI components (CustomSelect, Layout)
-│   │   ├── hooks/            # Custom React hooks (e.g., usePdfExport)
-│   │   ├── lib/              # Axios API client and WebSocket handlers
-│   │   ├── store/            # Zustand global state stores (Auth, Jobs)
-│   │   └── types/            # Shared TypeScript types
-│   ├── public/               # Static assets
-│   ├── .env.local.example
-│   ├── tailwind.config.ts
-│   └── package.json
-├── docker-compose.yml        # Infrastructure setup (MongoDB 7 + Redis 7)
-└── README.md
-```
-
----
-
-## ⚡ Quick Start
+## Local setup
 
 ### Prerequisites
 - Node.js 18+
-- Docker & Docker Compose
-- Google Gemini API key
+- Docker & Docker Compose (optional for local DB/Redis)
+- A MongoDB Atlas free cluster (or local instance)
+- An Upstash Redis database (or local instance)
+- A Google Gemini API Key
 
-### 1. Clone & Setup
+### Backend
 ```bash
-git clone https://github.com/makeprodigy/assignment_veda.git
-cd assignment_veda
+cp backend/.env.example backend/.env
+# Fill in: MONGODB_URI, REDIS_URL, GEMINI_API_KEY, JWT_SECRET, FRONTEND_URL
+cd backend && npm install && npm run dev
+```
+Server runs at `http://localhost:4000`.
+
+### Frontend
+```bash
+cp frontend/.env.local.example frontend/.env.local
+# Fill in: NEXT_PUBLIC_API_URL
+cd frontend && npm install && npm run dev
+```
+App runs at `http://localhost:3000`.
+
+---
+
+## Architecture overview
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│  Next.js 15 frontend (Vercel)                               │
+│  - JWT Auth stored in cookies                               │
+│  - Zustand store for assignment creation state              │
+│  - html2pdf.js for client-side desktop-caliber PDF export   │
+│  - WebSocket client for live job progress notifications     │
+└────────────────────────┬────────────────────────────────────┘
+                         │ HTTP REST API + WebSocket
+┌────────────────────────▼────────────────────────────────────┐
+│  Express backend (Render)                                   │
+│  - Custom JWT Auth + express-rate-limit                     │
+│  - BullMQ worker — AI paper generation jobs                 │
+│  - WebSocket server — streams job progress to browser       │
+│  - Multer — handles uploaded reference files/images         │
+│  - Zod — runtime validation for incoming requests           │
+└────────┬────────────────────────────┬───────────────────────┘
+         │                            │
+   MongoDB Atlas                  Redis (Upstash)
+   (documents)                    (BullMQ queue)
+         │
+   Google Gemini 2.5 Flash
+   (paper generation)
 ```
 
-### 2. Start Infrastructure
-```bash
-docker-compose up -d
-# MongoDB on :27017, Redis on :6379
-```
+## Why each technology
 
-### 3. Backend Setup
-```bash
-cd backend
-npm install
-cp .env.example .env
-# Edit .env — add your GEMINI_API_KEY
-npm run dev
-# Backend running on http://localhost:4000
-```
+| Tool | Role | Why not something simpler |
+|---|---|---|
+| **Zod** | Validation | Single source of truth for runtime validation on API endpoints, preventing malformed data from reaching the database. |
+| **BullMQ + Redis** | Job queue | AI calls to Gemini can take 5–15 seconds. Pushing them to a background queue prevents HTTP timeouts, frees up the main Node thread, and allows the frontend to poll/stream progress reliably. |
+| **WebSocket** | Real-time | Pushes `job:progress`, `job:completed`, and `job:failed` events directly to the browser tab that submitted the job, so the loading screen updates dynamically. |
+| **Zustand** | Client state | Holds the complex multi-step assignment form data in memory (Question counts, types, time allowance). |
+| **html2pdf.js** | PDF Generation | Allows perfect 1024px desktop-formatted exports directly from the client, even if the user is on mobile. |
+| **JWT** | Auth | Lightweight, stateless session management, eliminating the need for complex session stores or third-party paid auth providers. |
 
-### 4. Frontend Setup
-```bash
-cd frontend
-npm install
-cp .env.local.example .env.local
-npm run dev
-# Frontend running on http://localhost:3000
-```
+---
+
+## Data models
+
+### User
+Handles custom authentication for teachers using the platform.
+
+| Field | Type | Notes |
+|---|---|---|
+| `name` | string | Full name of the user |
+| `email` | string | Unique login credential |
+| `password` | string | Hashed with bcryptjs |
+| `role` | "teacher" \| "student" | Default is teacher |
+| `schoolName` | string | Set at onboarding |
+
+### Assignment
+A paper generation job created by a teacher.
+
+| Field | Type | Notes |
+|---|---|---|
+| `userId` | ObjectId | Owner (teacher) |
+| `subject` | string | e.g. "Science" |
+| `topic` | string | e.g. "Photosynthesis" |
+| `className` | string | e.g. "10th Grade" |
+| `dueDate` | Date | When the assignment is due |
+| `questionTypes` | `{type, count, marks}[]` | e.g. `[{type:"MCQ", count:5, marks:2}]` |
+| `status` | "pending" \| "processing" \| "completed" \| "failed" | Updated by the BullMQ worker |
+| `jobId` | string | Maps to BullMQ job |
+| `resultId` | ObjectId? | Set when generation completes |
+
+### Result
+The AI-generated Question Paper linked to an Assignment.
+
+| Field | Type | Notes |
+|---|---|---|
+| `jobId` | string | Unique index mapping to the BullMQ job |
+| `assignmentId` | ObjectId | Links back to the assignment configuration |
+| `userId` | ObjectId | Owner (teacher) |
+| `paper` | Object | The structured JSON output from Gemini AI |
+
+*The `paper` object includes sections, schoolName, totalMarks, generalInstruction, questions (with difficulty tags), and a private answerKey.*
+
+---
+
+## User flows
+
+### Teacher flow
+1. **Sign up / Login** → Standard JWT-based authentication.
+2. **Dashboard (`/home`)** → View recent assignments and quick stats.
+3. **Creation Form (`/create`)** → Multi-step form: fill in title, subject, class, and configure specific question types/counts. Can also upload context files/images.
+4. **Processing (`/loading/[jobId]`)** → Live WebSocket progress: *Starting job → Analyzing content → Generating questions → Validating JSON → Saving paper.*
+5. **Output View (`/result/[jobId]`)** → Review the professional exam layout, see dynamic difficulty badges, and view the answer key.
+6. **Export** → Click "Download PDF" to get a perfectly formatted A4 paper.
+
+---
+
+## API Routes & Middleware
+
+**Middleware Chain**: Most routes are protected by the `authenticate` middleware, which verifies the JWT token in the `Authorization` header.
+
+| Method | Path | Purpose |
+|---|---|---|
+| `POST` | `/api/auth/register` | Register a new user |
+| `POST` | `/api/auth/login` | Login and receive a JWT token |
+| `GET` | `/api/auth/me` | Fetch current user details |
+| `POST` | `/api/assignments` | Create an assignment → Enqueues BullMQ job |
+| `GET` | `/api/assignments` | List all assignments for the authenticated user |
+| `GET` | `/api/assignments/:id` | Get specific assignment details |
+| `GET` | `/api/results/job/:jobId` | Fetch the AI-generated paper once completed |
+
+---
+
+## Paper generation pipeline
+
+1. Teacher submits form → `POST /api/assignments` validates payload with Zod.
+2. BullMQ job `generate-paper` is enqueued, and the HTTP request returns the `jobId`.
+3. Worker picks up job:
+   - **Analyzing** — reads uploaded files/images if any.
+   - **Generating** — calls Google Gemini 2.5 Flash with strict JSON-schema prompt and deterministic instructions.
+   - **Validating** — automatically categories questions into logical Sections (A, B) and assigns Difficulties (Easy, Moderate, Hard).
+   - **Saving** — writes the `Result` document to MongoDB Atlas and updates `Assignment.status = "completed"`.
+4. The WebSocket server simultaneously emits `job:progress` and `job:completed` directly to the frontend.
+5. Browser auto-redirects from `/loading/[jobId]` to `/result/[jobId]`.
+
+---
+
+## Deployment
+
+| Service | Platform | Notes |
+|---|---|---|
+| Frontend | Vercel | Root: `frontend/`, Framework: Next.js 15 |
+| Backend | Render | Root: `backend/`, starts via `node dist/index.js` |
+| Database | MongoDB Atlas | Free tier |
+| Queue / Cache | Upstash Redis | Free tier, used for BullMQ and aggressive caching |
