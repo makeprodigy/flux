@@ -74,7 +74,7 @@
       <img src="./frontend/public/dashboard.png" alt="Desktop View" width="100%" style="border-radius: 8px; border: 1px solid #eaeaea;" />
     </td>
     <td align="center" width="25%">
-      <strong>Mobile Responsive</strong><br/>
+      <strong>Mobile Dashboard</strong><br/>
       <img src="./frontend/public/mobile_view.png" alt="Mobile View" width="100%" style="border-radius: 8px; border: 1px solid #eaeaea;" />
     </td>
   </tr>
