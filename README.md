@@ -24,8 +24,8 @@
 
 ## UI Screenshots
 <p align="center">
-  <img src="./frontend/public/dashboard.png" alt="Desktop View" width="73%" />
-  <img src="./frontend/public/mobile_view.png" alt="Mobile View" width="25%" />
+  <img src="./frontend/public/dashboard.png" alt="Desktop View" height="380" />
+  <img src="./frontend/public/mobile_view.png" alt="Mobile View" height="380" />
 </p>
 
 ---
