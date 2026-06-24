@@ -2,12 +2,12 @@
   <div style="padding: 20px;">
     <!-- Logo or Icon can go here -->
   </div>
-  <h1 align="center" style="font-size: 3.5rem; margin-bottom: 10px; font-weight: bold; background: -webkit-linear-gradient(45deg, #0070f3, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">VedaAI</h1>
+  <h1 align="center" style="font-size: 3.5rem; margin-bottom: 10px; font-weight: bold; background: -webkit-linear-gradient(45deg, #0070f3, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Flux</h1>
   <p align="center" style="font-size: 1.2rem; color: #666;">
     <strong>Next-Generation AI-Powered Assessment Creation Platform</strong>
   </p>
   <p align="center">
-    VedaAI allows educators to generate comprehensive, highly structured question papers in seconds. By describing a topic, providing context, or uploading reference materials, the AI crafts customized assessments complete with varying difficulty levels, specific question types, and a detailed answer key.
+    Flux allows educators to generate comprehensive, highly structured question papers in seconds. By describing a topic, providing context, or uploading reference materials, the AI crafts customized assessments complete with varying difficulty levels, specific question types, and a detailed answer key.
   </p>
 
   <p align="center">
