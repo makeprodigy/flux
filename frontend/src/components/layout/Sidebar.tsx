@@ -92,7 +92,7 @@ export default function Sidebar() {
             <span className={`shrink-0 ${isActive(item.href) ? 'text-[#352B25]' : 'text-[#9CA3AF]'}`}>{item.icon}</span>
             <span className="flex-1">{item.label}</span>
             {item.badge !== undefined && (
-              <span className="ml-auto bg-[#D84315] text-white text-[10px] font-bold px-2 rounded-full min-w-[22px] h-5 flex items-center justify-center">
+              <span className="ml-auto bg-[#6D28D9] text-white text-[10px] font-bold px-2 rounded-full min-w-[22px] h-5 flex items-center justify-center">
                 {item.badge}
               </span>
             )}
@@ -127,7 +127,7 @@ export default function Sidebar() {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <School size={20} className="text-[#D84315]" strokeWidth={2.5} />
+                <School size={20} className="text-[#6D28D9]" strokeWidth={2.5} />
               )}
             </div>
             <div className="min-w-0 flex-1">

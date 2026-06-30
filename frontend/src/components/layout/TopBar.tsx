@@ -81,7 +81,7 @@ export default function TopBar({ title, backHref, breadcrumb }: TopBarProps) {
               <p className="text-[11px] font-body text-[#999] m-0">2 hours ago</p>
             </div>
             <div className="px-4 py-2 text-center border-t border-gray-100">
-              <button className="text-[12px] font-semibold font-body text-[#D84315] bg-transparent border-none cursor-pointer">Mark all as read</button>
+              <button className="text-[12px] font-semibold font-body text-[#6D28D9] bg-transparent border-none cursor-pointer">Mark all as read</button>
             </div>
           </div>
         </div>

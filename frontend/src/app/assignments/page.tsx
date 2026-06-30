@@ -282,7 +282,7 @@ export default function AssignmentsPage() {
           </div>
 
           <div className="relative w-full sm:w-[320px]">
-            <div className="flex items-center rounded-full border border-[#E5E5E5] bg-white px-3 py-2 focus-within:border-[#D84315] focus-within:ring-1 focus-within:ring-[#D84315] transition-all">
+            <div className="flex items-center rounded-full border border-[#E5E5E5] bg-white px-3 py-2 focus-within:border-[#6D28D9] focus-within:ring-1 focus-within:ring-[#6D28D9] transition-all">
               <Search size={15} className="text-[#A3A3A3] shrink-0" />
               <input
                 value={search}

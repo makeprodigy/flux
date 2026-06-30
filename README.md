@@ -32,7 +32,6 @@
 
 - [Key Features](#key-features)
 - [Technology Stack Breakdown](#technology-stack-breakdown)
-- [UI Showcase](#ui-showcase)
 - [High-Level Design (HLD)](#high-level-design-hld)
 - [Low-Level Design (LLD)](#low-level-design-lld)
 - [Database Schema (ERD)](#database-schema-erd)
@@ -65,22 +64,6 @@
 
 ---
 
-## <img src="https://api.iconify.design/lucide:image.svg?color=white" width="24" height="24" align="top" /> UI Showcase
-
-<table align="center" width="100%" border="0" cellspacing="0" cellpadding="8">
-  <tr>
-    <td align="center" width="75%">
-      <strong>Desktop Dashboard</strong><br/>
-      <img src="./frontend/public/dashboard.png" alt="Desktop View" width="100%" style="border-radius: 8px; border: 1px solid #eaeaea;" />
-    </td>
-    <td align="center" width="25%">
-      <strong>Mobile Dashboard</strong><br/>
-      <img src="./frontend/public/mobile_view.png" alt="Mobile View" width="100%" style="border-radius: 8px; border: 1px solid #eaeaea;" />
-    </td>
-  </tr>
-</table>
-
----
 
 ## <img src="https://api.iconify.design/lucide:layers.svg?color=white" width="24" height="24" align="top" /> High-Level Design (HLD)
 

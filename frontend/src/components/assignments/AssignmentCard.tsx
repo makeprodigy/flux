@@ -22,7 +22,7 @@ export default function AssignmentCard({ assignment, onView, onDelete }: Assignm
     >
       <div>
         <div className="flex justify-between items-start mb-2">
-          <h2 className="font-heading font-bold text-[#352B25] text-[17px] tracking-tight leading-snug line-clamp-2 pr-2 group-hover:text-[#D84315] transition-colors">
+          <h2 className="font-heading font-bold text-[#352B25] text-[17px] tracking-tight leading-snug line-clamp-2 pr-2 group-hover:text-[#6D28D9] transition-colors">
             {assignment.topic || assignment.subject}
           </h2>
           <div className="relative">
@@ -43,7 +43,7 @@ export default function AssignmentCard({ assignment, onView, onDelete }: Assignm
                 {onDelete && (
                   <button
                     onClick={(e) => { e.stopPropagation(); onDelete(assignment._id); setMenuOpen(false); }}
-                    className="block w-full text-left px-3 py-2 bg-transparent border-none font-body text-[12px] font-medium text-[#D84315] cursor-pointer hover:bg-red-50 transition-colors"
+                    className="block w-full text-left px-3 py-2 bg-transparent border-none font-body text-[12px] font-medium text-[#6D28D9] cursor-pointer hover:bg-purple-50 transition-colors"
                   >
                     Delete
                   </button>

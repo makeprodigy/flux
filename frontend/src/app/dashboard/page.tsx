@@ -107,9 +107,9 @@ export default function DashboardPage() {
       <div className="pb-8">
         
         {/* Welcome Banner */}
-        <div className="relative overflow-hidden bg-[#352B25] rounded-[16px] p-8 sm:p-10 text-white mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
+        <div className="relative overflow-hidden bg-gradient-to-r from-[#6D28D9] to-[#14B8A6] rounded-[16px] p-8 sm:p-10 text-white mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center shadow-[0_8px_32px_rgba(109,40,217,0.25)]">
           {/* Subtle gradient blob for premium feel */}
-          <div className="absolute top-[-30%] right-[-5%] w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(216, 67, 21, 0.2) 0%, rgba(17,17,17,0) 70%)' }} />
+          <div className="absolute top-[-30%] right-[-5%] w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255,255,255,0) 70%)' }} />
           
           <div className="relative z-10 mb-6 sm:mb-0">
             <h1 className="font-heading text-3xl font-extrabold mb-2 tracking-tight text-white">
@@ -139,11 +139,11 @@ export default function DashboardPage() {
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
           <div className="col-span-1 group relative overflow-hidden bg-white/80 backdrop-blur-[24px] rounded-[16px] md:rounded-[20px] p-4 md:p-6 shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-white cursor-default transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-0.5">
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#D84315] opacity-[0.04] blur-2xl rounded-full group-hover:opacity-[0.08] transition-opacity duration-500" />
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#6D28D9] opacity-[0.04] blur-2xl rounded-full group-hover:opacity-[0.08] transition-opacity duration-500" />
             <div className="relative z-10 flex flex-col justify-between h-full gap-3 md:gap-4">
               <div className="flex justify-between items-start">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-[#FFF4F1] flex items-center justify-center border border-[#FFE0D6] group-hover:scale-105 transition-transform duration-300 shadow-sm">
-                  <FileText className="w-4 h-4 md:w-[18px] md:h-[18px] text-[#D84315]" strokeWidth={2.5} />
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-[#F5F3FF] flex items-center justify-center border border-[#EDE9FE] group-hover:scale-105 transition-transform duration-300 shadow-sm">
+                  <FileText className="w-4 h-4 md:w-[18px] md:h-[18px] text-[#6D28D9]" strokeWidth={2.5} />
                 </div>
               </div>
               <div>
@@ -188,7 +188,7 @@ export default function DashboardPage() {
         <div>
           <div className="flex justify-between items-center mb-4">
             <h2 className="font-heading text-[18px] font-bold tracking-tight text-[#352B25]">Recent Assignments</h2>
-            <Link href="/assignments" className="flex items-center gap-1 font-body text-[13px] font-semibold text-[#D84315] no-underline hover:text-[#BF360C] transition-colors">
+            <Link href="/assignments" className="flex items-center gap-1 font-body text-[13px] font-semibold text-[#6D28D9] no-underline hover:text-[#5B21B6] transition-colors">
               View All <ArrowRight size={14} />
             </Link>
           </div>
@@ -203,7 +203,7 @@ export default function DashboardPage() {
                 Create your first assignment to start collecting and grading student submissions. You can set up rubrics, define marking criteria, and let AI assist with grading.
               </p>
               <div className="flex flex-col gap-3">
-                <Link href="/assignments/create" className="flex items-center justify-center gap-2 w-[280px] h-[48px] bg-[#352B25] text-white rounded-full font-heading text-[14px] font-bold no-underline transition-transform duration-200 shadow-sm hover:-translate-y-0.5">
+                <Link href="/assignments/create" className="flex items-center justify-center gap-2 w-[280px] h-[48px] bg-gradient-to-r from-[#6D28D9] to-[#14B8A6] text-white rounded-full font-heading text-[14px] font-bold no-underline transition-transform duration-200 shadow-[0_4px_14px_rgba(109,40,217,0.2)] hover:-translate-y-0.5">
                   <Plus size={16} strokeWidth={2.5} /> Create Your First Assignment
                 </Link>
                 <button onClick={handleDemoToggle} className="flex items-center justify-center gap-2 w-[280px] h-[48px] bg-[#F5F5F5] text-[#352B25] rounded-full font-heading text-[14px] font-bold no-underline border border-[#E5E5E5] transition-colors hover:bg-[#EBEBEB] cursor-pointer">

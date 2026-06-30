@@ -128,9 +128,9 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: #252525;
+    background: linear-gradient(135deg, #6D28D9, #14B8A6);
     color: white;
-    border: 2px solid #D84315;
+    border: none;
     border-radius: 100px;
     padding: 12px 20px;
     font-family: var(--font-heading);
@@ -145,7 +145,7 @@
 
   .sidebar-create-btn:hover {
     transform: translateY(-2px);
-    background: #352B25;
+    box-shadow: 0 8px 24px rgba(109, 40, 217, 0.25);
   }
 
   .sidebar-nav {
