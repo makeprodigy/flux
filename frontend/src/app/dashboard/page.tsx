@@ -107,7 +107,7 @@ export default function DashboardPage() {
       <div className="pb-8">
         
         {/* Welcome Banner */}
-        <div className="relative overflow-hidden bg-gradient-to-r from-[#6D28D9] to-[#14B8A6] rounded-[16px] p-8 sm:p-10 text-white mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center shadow-[0_8px_32px_rgba(109,40,217,0.25)]">
+        <div className="relative overflow-hidden bg-gradient-to-r from-[#2E1065] to-[#134E4A] rounded-[16px] p-8 sm:p-10 text-white mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center shadow-[0_8px_32px_rgba(46,16,101,0.25)]">
           {/* Subtle gradient blob for premium feel */}
           <div className="absolute top-[-30%] right-[-5%] w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255,255,255,0) 70%)' }} />
           
