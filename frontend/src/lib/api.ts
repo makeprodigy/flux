@@ -3,7 +3,7 @@ import type { AssignmentInput, Assignment, QuestionPaper, User } from '@/types';
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
-export const TOKEN_KEY = 'vedaai_token';
+export const TOKEN_KEY = 'flux_token';
 
 export function getToken(): string | null {
   if (typeof window === 'undefined') return null;

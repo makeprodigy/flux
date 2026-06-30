@@ -76,7 +76,7 @@ export default function SettingsPage() {
             onClick={handleLogout}
             className="sharp-btn-secondary !text-[#EF4444] !border-[#FCA5A5] hover:!bg-[#FEF2F2] hover:!border-[#EF4444]" 
           >
-            Sign Out of VedaAI
+            Sign Out of Flux
           </button>
         </div>
       </div>

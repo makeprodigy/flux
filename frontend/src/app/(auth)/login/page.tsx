@@ -17,8 +17,8 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const DEMO_EMAIL = 'demo@vedaai.app';
-  const DEMO_PASSWORD = 'VedaDemo!2026#Secure';
+  const DEMO_EMAIL = 'demo@flux.app';
+  const DEMO_PASSWORD = 'FluxDemo!2026#Secure';
 
   const fillDemo = () => {
     setEmail(DEMO_EMAIL);
@@ -56,7 +56,7 @@ export default function LoginPage() {
         <div className="auth-left-content">
           <div className="auth-left-logo-row" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '40px' }}>
             <Logo className="w-[48px] h-[48px] shadow-lg" />
-            <span className="auth-left-logo-text" style={{ margin: 0 }}>VedaAI</span>
+            <span className="auth-left-logo-text" style={{ margin: 0 }}>Flux</span>
           </div>
           
           <div>
@@ -72,7 +72,7 @@ export default function LoginPage() {
           <div className="auth-left-social">
             <div className="auth-avatar-group">
               <div className="auth-avatar" style={{ background: '#1A1A1A' }}>JD</div>
-              <div className="auth-avatar" style={{ background: '#FF5623' }}>AS</div>
+              <div className="auth-avatar" style={{ background: '#6D28D9' }}>AS</div>
               <div className="auth-avatar" style={{ background: '#2A2A2A' }}>+1k</div>
             </div>
             <div style={{ color: '#808080', fontSize: '14px', fontWeight: 500 }}>
@@ -94,13 +94,13 @@ export default function LoginPage() {
           </div>
 
           {/* Demo credentials banner */}
-          <div className="flex items-center justify-between gap-4 p-4 mb-6 rounded-2xl bg-gradient-to-br from-[#FFF4F1] to-[#FFF9F8] border border-[#FFE0D6] shadow-[0_2px_12px_rgba(216,67,21,0.06)] relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF5623] opacity-[0.03] blur-2xl rounded-full group-hover:opacity-[0.06] transition-opacity duration-500 pointer-events-none" />
+          <div className="flex items-center justify-between gap-4 p-4 mb-6 rounded-2xl bg-gradient-to-br from-[#F5F3FF] to-[#FAFAF9] border border-[#EDE9FE] shadow-[0_2px_12px_rgba(109,40,217,0.06)] relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#6D28D9] opacity-[0.03] blur-2xl rounded-full group-hover:opacity-[0.06] transition-opacity duration-500 pointer-events-none" />
             
             <div className="relative z-10 flex-1">
               <div className="flex items-center gap-1.5 mb-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FF5623] shadow-[0_0_8px_rgba(255,86,35,0.6)]" />
-                <p className="m-0 text-[10px] font-bold text-[#FF5623] uppercase tracking-widest font-heading">Demo Account</p>
+                <div className="w-1.5 h-1.5 rounded-full bg-[#6D28D9] shadow-[0_0_8px_rgba(109,40,217,0.6)]" />
+                <p className="m-0 text-[10px] font-bold text-[#6D28D9] uppercase tracking-widest font-heading">Demo Account</p>
               </div>
               <div className="flex flex-col gap-0.5">
                 <p className="m-0 text-[13px] text-[#4B5563] font-medium font-inter">{DEMO_EMAIL}</p>
@@ -111,7 +111,7 @@ export default function LoginPage() {
             <button
               type="button"
               onClick={fillDemo}
-              className="relative z-10 flex items-center gap-2 bg-[#FF5623] text-white border-none rounded-xl px-4 py-2.5 text-[12px] font-bold font-heading shadow-[0_4px_12px_rgba(255,86,35,0.2)] hover:bg-[#E64A19] hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(255,86,35,0.3)] transition-all duration-300 cursor-pointer whitespace-nowrap"
+              className="relative z-10 flex items-center gap-2 bg-[#6D28D9] text-white border-none rounded-xl px-4 py-2.5 text-[12px] font-bold font-heading shadow-[0_4px_12px_rgba(109,40,217,0.2)] hover:bg-[#5B21B6] hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(109,40,217,0.3)] transition-all duration-300 cursor-pointer whitespace-nowrap"
             >
               Auto-Fill Form
             </button>
@@ -145,7 +145,7 @@ export default function LoginPage() {
             <div className="auth-input-group">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                 <label className="auth-label" style={{ margin: 0 }}>Password</label>
-                <Link href="#" className="auth-link" style={{ fontSize: '13px', textTransform: 'none', color: '#FF5623' }}>
+                <Link href="#" className="auth-link" style={{ fontSize: '13px', textTransform: 'none', color: '#6D28D9' }}>
                   Forgot password?
                 </Link>
               </div>

@@ -40,7 +40,7 @@ export class WSClient {
     try {
       const baseUrl = getBaseWSUrl();
       const wsUrl = new URL(baseUrl);
-      const token = localStorage.getItem('vedaai_token');
+      const token = localStorage.getItem('flux_token');
       if (token) {
         wsUrl.searchParams.set('token', token);
       }

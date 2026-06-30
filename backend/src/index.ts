@@ -45,7 +45,7 @@ app.use('/api/results', resultRoutes);
 
 // Base route for uptime monitors
 app.get('/', (_req, res) => {
-  res.status(200).send('VedaAI Backend is running smoothly.');
+  res.status(200).send('Flux Backend is running smoothly.');
 });
 
 // Health check
@@ -80,7 +80,7 @@ async function bootstrap() {
 
     // Start listening
     server.listen(env.PORT, () => {
-      console.log(`🚀 VedaAI backend running on port ${env.PORT} [${env.NODE_ENV}]`);
+      console.log(`🚀 Flux backend running on port ${env.PORT} [${env.NODE_ENV}]`);
       console.log(`   WebSocket available on ws://localhost:${env.PORT}`);
     });
   } catch (error) {

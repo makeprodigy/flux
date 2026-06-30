@@ -60,7 +60,7 @@ export default function Sidebar() {
       <div className="flex items-center gap-3 px-6 pt-8 pb-4">
         <Logo className="w-10 h-10 shadow-md" />
         <span className="font-bricolage font-extrabold text-[26px] text-[#352B25] tracking-tight">
-          VedaAI
+          Flux
         </span>
       </div>
 

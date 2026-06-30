@@ -1,6 +1,6 @@
-# VedaAI Production Deployment Guide
+# Flux Production Deployment Guide
 
-This guide walks you through deploying **VedaAI** to production using the most reliable, free-tier friendly modern stack: **Vercel** (Frontend), **Render** (Backend), **MongoDB Atlas** (Database), and **Upstash** (Redis).
+This guide walks you through deploying **Flux** to production using the most reliable, free-tier friendly modern stack: **Vercel** (Frontend), **Render** (Backend), **MongoDB Atlas** (Database), and **Upstash** (Redis).
 
 ---
 
@@ -28,9 +28,9 @@ Render's free Redis expires after 90 days, so Upstash is the standard for free p
 We will deploy the Node.js Express backend to [Render.com](https://render.com/).
 
 1. Go to Render and click **New+** -> **Web Service**.
-2. Connect your GitHub account and select the `assignment_veda` repository.
+2. Connect your GitHub account and select the `assignment_flux` repository.
 3. Configure the Web Service:
-   - **Name:** `vedaai-backend` (or whatever you prefer)
+   - **Name:** `flux-backend` (or whatever you prefer)
    - **Root Directory:** `backend` *(Crucial!)*
    - **Environment:** `Node`
    - **Build Command:** `npm install && npm run build`
@@ -47,11 +47,11 @@ We will deploy the Node.js Express backend to [Render.com](https://render.com/).
 | `REDIS_HOST` | *e.g., `humble-narwhal-134636.upstash.io` (Do NOT include https://)* |
 | `REDIS_PORT` | `6379` |
 | `REDIS_PASSWORD` | *Paste your Upstash password/token here* |
-| `JWT_SECRET` | *Type any long random string (e.g., `veda_prod_secret_9942`)* |
+| `JWT_SECRET` | *Type any long random string (e.g., `flux_prod_secret_9942`)* |
 | `JWT_EXPIRES_IN` | `7d` |
 | `GEMINI_API_KEY` | *Your Google Gemini API Key* |
 
-5. Click **Create Web Service**. Wait a few minutes for it to build and deploy. Once it's live, copy the Render URL (e.g., `https://vedaai-backend.onrender.com`).
+5. Click **Create Web Service**. Wait a few minutes for it to build and deploy. Once it's live, copy the Render URL (e.g., `https://flux-backend.onrender.com`).
 
 ---
 
@@ -60,7 +60,7 @@ We will deploy the Node.js Express backend to [Render.com](https://render.com/).
 We will deploy the Next.js frontend to [Vercel](https://vercel.com/), which is built specifically for Next.js and is incredibly fast.
 
 1. Go to Vercel and click **Add New** -> **Project**.
-2. Connect your GitHub account and import the `assignment_veda` repository.
+2. Connect your GitHub account and import the `assignment_flux` repository.
 3. Configure the Project:
    - **Framework Preset:** `Next.js`
    - **Root Directory:** Edit this and select `frontend` *(Crucial!)*
@@ -69,10 +69,10 @@ We will deploy the Next.js frontend to [Vercel](https://vercel.com/), which is b
 
 | Key | Value |
 | :--- | :--- |
-| `NEXT_PUBLIC_API_URL` | *Paste your Render Backend URL here (e.g., `https://vedaai-backend.onrender.com`)* |
+| `NEXT_PUBLIC_API_URL` | *Paste your Render Backend URL here (e.g., `https://flux-backend.onrender.com`)* |
 
 5. Click **Deploy**. Vercel will build and launch your frontend in a minute or two.
-6. Once deployed, copy your final Vercel Domain (e.g., `https://vedaai-frontend.vercel.app`).
+6. Once deployed, copy your final Vercel Domain (e.g., `https://flux-frontend.vercel.app`).
 
 ---
 
@@ -83,7 +83,7 @@ Right now, your backend is running, but it might reject requests from your front
 1. Go back to your **Render Web Service** dashboard.
 2. Go to **Environment**.
 3. Add or update the `FRONTEND_URL` variable:
-   - **Value:** *Paste your Vercel URL here (e.g., `https://vedaai-frontend.vercel.app`)*. **Make sure there is NO trailing slash at the end of the URL!**
+   - **Value:** *Paste your Vercel URL here (e.g., `https://flux-frontend.vercel.app`)*. **Make sure there is NO trailing slash at the end of the URL!**
 4. Save the changes. Render will automatically redeploy the backend with the new allowed URL.
 
 ---

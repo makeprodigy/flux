@@ -21,7 +21,7 @@ export function initWebSocket(server: http.Server): WebSocketServer {
       
       if (!token) {
         const cookieStr = request.headers.cookie || '';
-        token = cookieStr.split('; ').find(c => c.startsWith('vedaai_token='))?.split('=')[1] || '';
+        token = cookieStr.split('; ').find(c => c.startsWith('flux_token='))?.split('=')[1] || '';
       }
 
       if (token) {

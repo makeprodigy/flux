@@ -1,7 +1,7 @@
-const BACKEND_URL = 'https://assignment-veda.onrender.com';
+const BACKEND_URL = 'https://assignment-flux.onrender.com';
 
 async function testApi() {
-  console.log("=== Testing Live VedaAI API ===");
+  console.log("=== Testing Live Flux API ===");
   try {
     const timestamp = Date.now();
     const email = `testuser_${timestamp}@example.com`;

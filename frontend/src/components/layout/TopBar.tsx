@@ -32,9 +32,9 @@ export default function TopBar({ title, backHref, breadcrumb }: TopBarProps) {
       <div className="flex items-center gap-3">
         {/* Mobile Logo */}
         <div className="flex md:hidden items-center gap-3 cursor-pointer" onClick={() => router.push('/dashboard')}>
-          <Logo className="w-[34px] h-[34px] shadow-sm" dark />
+          <Logo className="w-[34px] h-[34px] shadow-sm" />
           <span className="font-bricolage font-extrabold text-[18px] text-[#352B25] tracking-tight">
-            VedaAI
+            Flux
           </span>
         </div>
 
@@ -112,7 +112,7 @@ export default function TopBar({ title, backHref, breadcrumb }: TopBarProps) {
             <div className="absolute right-0 top-[calc(100%+8px)] w-[220px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] z-50 py-1 overflow-hidden">
               <div className="px-4 py-3 border-b border-gray-100 mb-1">
                 <p className="font-heading text-[14px] font-semibold text-[#352B25] m-0 truncate">{user?.name ?? 'Demo Teacher'}</p>
-                <p className="font-body text-[12px] text-[#737373] mt-0.5 mb-0 truncate">{user?.email ?? 'teacher@veda.ai'}</p>
+                <p className="font-body text-[12px] text-[#737373] mt-0.5 mb-0 truncate">{user?.email ?? 'teacher@flux.app'}</p>
               </div>
               <button className="w-full text-left px-4 py-2.5 text-[13px] font-body font-medium text-[#555] bg-transparent border-none flex items-center gap-2 cursor-pointer hover:bg-gray-50 transition-colors">
                 <User size={14} /> Profile Settings

@@ -58,7 +58,7 @@ export async function register(req: Request, res: Response): Promise<void> {
 
     const token = signToken(payload);
 
-    res.cookie('vedaai_token', token, {
+    res.cookie('flux_token', token, {
       httpOnly: true,
       secure: env.NODE_ENV === 'production',
       sameSite: env.NODE_ENV === 'production' ? 'none' : 'lax',
@@ -113,7 +113,7 @@ export async function login(req: Request, res: Response): Promise<void> {
 
     const token = signToken(payload);
 
-    res.cookie('vedaai_token', token, {
+    res.cookie('flux_token', token, {
       httpOnly: true,
       secure: env.NODE_ENV === 'production',
       sameSite: env.NODE_ENV === 'production' ? 'none' : 'lax',
@@ -173,7 +173,7 @@ export async function getMe(req: Request, res: Response): Promise<void> {
 }
 
 export async function logout(req: Request, res: Response): Promise<void> {
-  res.cookie('vedaai_token', '', {
+  res.cookie('flux_token', '', {
     httpOnly: true,
     secure: env.NODE_ENV === 'production',
     sameSite: env.NODE_ENV === 'production' ? 'none' : 'lax',

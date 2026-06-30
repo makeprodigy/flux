@@ -20,7 +20,7 @@
     <img src="https://img.shields.io/badge/Upstash-Redis%20%26%20BullMQ-00E9A3?style=for-the-badge&logo=redis&logoColor=white" alt="Upstash" />
     <img src="https://img.shields.io/badge/Render-Backend-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render" />
     <br/>
-    <a href="https://assignment-veda.vercel.app/">
+    <a href="https://assignment-flux.vercel.app/">
       <img src="https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel" alt="Live Demo" />
     </a>
   </p>

@@ -1,5 +1,5 @@
 // Deletes all assignments + results for the demo user so the account is clean
-const BACKEND_URL = 'https://assignment-veda.onrender.com';
+const BACKEND_URL = 'https://assignment-flux.onrender.com';
 
 async function clearDemo() {
   console.log('=== Clearing Demo Account Data ===\n');
@@ -8,12 +8,12 @@ async function clearDemo() {
   const loginRes = await fetch(`${BACKEND_URL}/api/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: 'demo@vedaai.app', password: 'Demo@1234', role: 'teacher' }),
+    body: JSON.stringify({ email: 'demo@flux.app', password: 'Demo@1234', role: 'teacher' }),
   });
   const loginData = await loginRes.json();
   const token = loginData.data?.token;
   if (!token) throw new Error('Login failed: ' + JSON.stringify(loginData));
-  console.log('✅ Logged in as demo@vedaai.app');
+  console.log('✅ Logged in as demo@flux.app');
 
   // Get all assignments
   const listRes = await fetch(`${BACKEND_URL}/api/assignments`, {

@@ -36,7 +36,7 @@ export async function authenticate(
   next: NextFunction
 ): Promise<void> {
   try {
-    const token = req.cookies?.vedaai_token || (req.headers.authorization?.startsWith('Bearer ') ? req.headers.authorization.split(' ')[1] : null);
+    const token = req.cookies?.flux_token || (req.headers.authorization?.startsWith('Bearer ') ? req.headers.authorization.split(' ')[1] : null);
 
     if (!token) {
       res.status(401).json({ success: false, message: 'Authentication required. No token provided.' });

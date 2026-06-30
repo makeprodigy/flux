@@ -19,9 +19,8 @@ const inter = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: 'VedaAI - AI Assessment Creator',
-  description:
-    'Create high-quality assessments, question papers, and assignments in seconds with AI.',
+  title: 'Flux - AI Assessment Creator',
+  description: 'AI-powered assessment creator and grading system.',
 };
 
 export default function RootLayout({

@@ -291,7 +291,7 @@ export async function seedAssignments(req: Request, res: Response): Promise<void
         _id: assignmentId,
         userId,
         ...data,
-        schoolName: 'Veda AI Academy',
+        schoolName: 'Flux Academy',
         timeAllowed: '45 mins',
         dueDate: new Date(date.getTime() + 7 * 24 * 60 * 60 * 1000), 
         questionTypes: [
@@ -315,7 +315,7 @@ export async function seedAssignments(req: Request, res: Response): Promise<void
         assignmentId,
         userId,
         paper: {
-          schoolName: 'Veda AI Academy',
+          schoolName: 'Flux Academy',
           subject: data.subject,
           className: data.className,
           timeAllowed: '45 mins',

@@ -1,7 +1,7 @@
 {
-  "name": "vedaai-backend",
+  "name": "flux-backend",
   "version": "1.0.0",
-  "description": "VedaAI Backend - AI Assessment Creator",
+  "description": "Flux Backend - AI Assessment Creator",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
